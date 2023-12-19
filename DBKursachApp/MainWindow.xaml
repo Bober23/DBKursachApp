@@ -1,0 +1,71 @@
+﻿<Window x:Class="DBKursachApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBKursachApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="680" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+        <Label Content="Рассчет" Grid.Row="0" HorizontalAlignment="Center" FontSize="30"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Margin="5"> 
+                <Label Content="Выберите материал"/>
+                <ComboBox>
+                    <ComboBoxItem Content="Чугун"/>
+                    <ComboBoxItem Content="Сталь"/>
+                </ComboBox>
+                <Label Content="Введите вид колес"/>
+                <ComboBox>
+                    
+                </ComboBox>
+                <Label Content="Введите крутящий момент на шестерне"/>
+                <TextBox/>
+                <Label Content="Выберите φbd"/>
+                <ComboBox>
+                    
+                </ComboBox>
+                <Label Content="Введите коэффициент No"/>
+                <TextBox/>
+                <Label Content="Введите вид нагрузки"/>
+                <ComboBox>
+                    
+                </ComboBox>
+                <Label Content="Введите число ni"/>
+                <TextBox/>
+                <Label Content="Введите число tchi"/>
+                <TextBox/>
+                <Label Content="Введите T1i"/>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="5">
+                <Label Content="Введите число зубьев Z"/>
+                <TextBox/>
+                <Label Content="Введите число u"/>
+                <TextBox/>
+                <Label Content="Введите число b"/>
+                <TextBox/>
+                <Label Content="Введите угол наклона зуба b"/>
+                <TextBox/>
+                <Label Content="Выберите aw"/>
+                <ComboBox>
+                    
+                </ComboBox>
+                <Label Content="Введите N"/>
+                <TextBox/>
+                <Label Content="Введите F"/>
+                <TextBox/>
+                <Label Content="Введите m"/>
+                <TextBox/>
+                <Label Content="Размер шестерни равен:"/>
+                <Label x:Name="ansD"/>
+            </StackPanel>
+        </StackPanel>
+        <Button Grid.Row="2" Content="Рассчитать" x:Name="calculateButton" Click="calculateButton_Click"/>
+    </Grid>
+</Window>
