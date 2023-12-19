@@ -5,67 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DBKursachApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="680" Width="500">
+        Title="MainWindow" Height="550" Width="450" MinHeight="550" MaxHeight="550" MinWidth="450" MaxWidth="450">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="60" />
             <RowDefinition/>
             <RowDefinition Height="120"/>
         </Grid.RowDefinitions>
-        <Label Content="Рассчет" Grid.Row="0" HorizontalAlignment="Center" FontSize="30"/>
+        <Label Content="Проектировочный расчет циллиндрической передачи" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <StackPanel Orientation="Vertical" Margin="5"> 
                 <Label Content="Выберите материал"/>
-                <ComboBox>
-                    <ComboBoxItem Content="Чугун"/>
-                    <ComboBoxItem Content="Сталь"/>
+                <ComboBox x:Name="materialBox">
+                    <ComboBoxItem Content="Сталь 45"/>
+                    <ComboBoxItem Content="Сталь 50Г"/>
+                    <ComboBoxItem Content="Сталь 40Х"/>
+                    <ComboBoxItem Content="Сталь 40ХН"/>
+                    <ComboBoxItem Content="Сталь 20Х"/>
+                    <ComboBoxItem Content="Сталь 30ХГТ"/>
+                    <ComboBoxItem Content="Чугун ВЧ"/>
+                    <ComboBoxItem Content="Текстолит"/>
+                    <ComboBoxItem Content="ДСП"/>
+                    <ComboBoxItem Content="Полиамид"/>
                 </ComboBox>
                 <Label Content="Введите вид колес"/>
-                <ComboBox>
-                    
+                <ComboBox x:Name="typeBox">
+                    <ComboBoxItem Content="Сталь-сталь"/>
+                    <ComboBoxItem Content="Сталь-чугун"/>
+                    <ComboBoxItem Content="Сталь-бронза"/>
+                    <ComboBoxItem Content="Чугун-чугун"/>
+                    <ComboBoxItem Content="Текстолит-сталь"/>
+                    <ComboBoxItem Content="ДСП-сталь"/>
+                    <ComboBoxItem Content="Полиамид-сталь"/>
                 </ComboBox>
                 <Label Content="Введите крутящий момент на шестерне"/>
-                <TextBox/>
-                <Label Content="Выберите φbd"/>
-                <ComboBox>
-                    
-                </ComboBox>
-                <Label Content="Введите коэффициент No"/>
-                <TextBox/>
-                <Label Content="Введите вид нагрузки"/>
-                <ComboBox>
-                    
-                </ComboBox>
-                <Label Content="Введите число ni"/>
-                <TextBox/>
-                <Label Content="Введите число tchi"/>
-                <TextBox/>
-                <Label Content="Введите T1i"/>
-                <TextBox/>
+                <TextBox x:Name="t1Box" PreviewTextInput="NumberValidationTextBox"/>
+                <Label Content="Введите φbd от 0,2 до 1,2"/>
+                <TextBox x:Name="fiBox" PreviewTextInput="NumberValidationTextBox"/>
+                <Label Content="Введите число n"/>
+                <TextBox x:Name="nBox" PreviewTextInput="NumberValidationTextBox"/>
+                <Label Content="Введите число tch"/>
+                <TextBox x:Name="tchBox" PreviewTextInput="NumberValidationTextBox"/>
+                <Label Content="Введите число u"/>
+                <TextBox x:Name="uBox" PreviewTextInput="NumberValidationTextBox"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="5">
-                <Label Content="Введите число зубьев Z"/>
-                <TextBox/>
-                <Label Content="Введите число u"/>
-                <TextBox/>
-                <Label Content="Введите число b"/>
-                <TextBox/>
-                <Label Content="Введите угол наклона зуба b"/>
-                <TextBox/>
-                <Label Content="Выберите aw"/>
-                <ComboBox>
-                    
-                </ComboBox>
-                <Label Content="Введите N"/>
-                <TextBox/>
-                <Label Content="Введите F"/>
-                <TextBox/>
-                <Label Content="Введите m"/>
-                <TextBox/>
-                <Label Content="Размер шестерни равен:"/>
+                <Label Content="Найденный диаметр шестерни:"/>
                 <Label x:Name="ansD"/>
             </StackPanel>
         </StackPanel>
-        <Button Grid.Row="2" Content="Рассчитать" x:Name="calculateButton" Click="calculateButton_Click"/>
+        <Button Grid.Row="2" Content="Рассчитать" x:Name="calculateButton" Click="calculateButton_Click" Cursor="Hand"/>
     </Grid>
 </Window>
